@@ -1,0 +1,18 @@
+{
+    "name": "Bleeding Forest",
+    "manifest_version": 2,
+    "version": "1.0",
+    "theme": {
+        "images": {
+            "theme_frame": "bleeding_forest_firefox_theme_header.jpg"
+        },
+        "colors": {
+            "frame": "rgba(17, 31, 31, 1)",
+            "tab_background_text": "rgba(62, 199, 209, 1)",
+            "toolbar": "rgba(151, 237, 237, 0.3)",
+            "bookmark_text": "rgba(155, 238, 238, 1)",
+            "toolbar_field": "rgba(255, 255, 255, 1)",
+            "toolbar_field_text": "rgba(17, 31, 31, 1)"
+        }
+    }
+}
