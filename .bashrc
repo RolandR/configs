@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -109,12 +109,10 @@ bgjobs(){
 }
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	
     PS1="\n\
 \$( exitstatus )\$( batterylow )\$( gitstatus )\$( bgjobs )\[\033[7m\][\[$(tput sgr0)\]\
-\[\033[38;5;0m\]\[\033[48;5;13m\]\!\[$(tput sgr0)\]\
-\[\033[7m\]*\[$(tput sgr0)\]\
 \[\033[38;5;0m\]\[\033[48;5;13m\]\w\[$(tput sgr0)\]\
 \[\033[7m\]]\[$(tput sgr0)\]\
 \$ "
@@ -168,3 +166,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# aare.guru
+eval "$(aareguru --completion-script-bash)"
+
+export MPJ_HOME=/home/roland/Documents/projects/bfh-mpi/mpj-v0_44
+export PATH=$MPJ_HOME/bin:$PATH 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
